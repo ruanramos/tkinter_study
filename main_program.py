@@ -1,9 +1,16 @@
-from tkinter import *
 import player_class
 from functools import partial
 import mysql.connector
-import tkinter.font
 import collections
+
+try:
+    # for Python2
+    from Tkinter import *   ## notice capitalized T in Tkinter
+    import Tkinter.font
+except ImportError:
+    # for Python3
+    from tkinter import *   ## notice lowercase 't' in tkinter here
+    import tkinter.font
 
 """Creating a structure for return of a frame and buttons on menu for function create_frame()"""
 Frame_Buttons = collections.namedtuple('Frame_Buttons', ['frame', 'list_alpha_button', 'list_register_button',
